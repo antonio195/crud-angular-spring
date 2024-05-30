@@ -9,6 +9,7 @@ import { Course } from '../model/course';
 import { CoursesService } from '../services/courses.service';
 import { CategoryPipe } from '../../shared/pipes/category.pipe';
 import { ActivatedRoute, Router } from '@angular/router';
+import { CoursesListComponent } from '../courses-list/courses-list.component';
 
 
 @Component({
@@ -17,7 +18,8 @@ import { ActivatedRoute, Router } from '@angular/router';
   imports: [
     AppMaterialModule,
     CommonModule,
-    CategoryPipe
+    CategoryPipe,
+    CoursesListComponent
   ],
   templateUrl: './courses.component.html',
   styleUrl: './courses.component.scss'
@@ -25,8 +27,6 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class CoursesComponent implements OnInit {
 
   courses$: Observable<Course[]>;
-
-  displayedColumns = ["name", "category", "actions"];
 
   constructor(
     private cousesService: CoursesService,
@@ -51,6 +51,10 @@ export class CoursesComponent implements OnInit {
 
   onAdd(){
     this.router.navigate(["new"], {relativeTo: this.route});
+  }
+
+  onDelete(){
+    
   }
 
   ngOnInit(): void {

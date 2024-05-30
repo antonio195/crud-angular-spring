@@ -11,7 +11,7 @@ import { CoursesService } from './../services/courses.service';
   standalone: true,
   imports: [
     AppMaterialModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
   templateUrl: './course-form.component.html',
   styleUrl: './course-form.component.scss'
