@@ -6,3 +6,11 @@ mat-table{
 .action-column{
   flex: 0 0 75px;
 }
+
+mat-toolbar{
+  justify-content: space-between;
+}
+
+.btn_add{
+  margin-right: 50px;
+}

@@ -1,5 +1,18 @@
-<mat-table  [dataSource]="courses">
+<mat-toolbar color="primary">
+  Cursos disponíveis
+  <button
+    mat-flat-button
+    color="surface"
+    class="btn_add"
+    aria-label="Adicionar um curso"
+    (click)="onAdd()"
+  >
+    <mat-icon>add</mat-icon>
+    Novo Curso
+  </button>
+</mat-toolbar>
 
+<mat-table  [dataSource]="courses">
   <!-- Name Column -->
   <ng-container matColumnDef="name">
     <mat-header-cell  *matHeaderCellDef>Curso</mat-header-cell>
@@ -24,10 +37,10 @@
     <mat-header-cell  *matHeaderCellDef>Ações</mat-header-cell>
     <mat-cell  *matCellDef="let element">
 
-      <button mat-mini-fab color="primary" aria-label="Editar um curso">
+      <button mat-mini-fab color="primary" aria-label="Editar um curso" (click)="onEdit(element)">
         <mat-icon>edit</mat-icon>
       </button>
-      <button mat-mini-fab color="warn" aria-label="Deletar um curso">
+      <button mat-mini-fab color="warn" aria-label="Deletar um curso" (click)="onRemove(element)">
         <mat-icon>delete</mat-icon>
       </button>
     </mat-cell>
